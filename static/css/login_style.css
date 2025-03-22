@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #2ebf91;
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+/* Left Panel */
+.left-panel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Right Panel */
+.right-panel {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.right-panel h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.right-panel p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #777;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Button Styles */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2ebf91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #219e7a;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    color: #555;
+    margin: 0 10px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #2ebf91;
+}
+
+/* Footer */
+.footer {
+    margin-top: 15px;
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding animation to elements */
+.left-panel {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.overlay {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.right-panel h1,
+.right-panel p,
+.form-group,
+.login-btn,
+.social-links {
+    animation: fadeInUp 1.5s ease-out forwards;
+}

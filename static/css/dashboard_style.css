@@ -1,0 +1,218 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    transition: background-color 0.5s ease; /* Smooth background transition */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background-color: #ff8aa8;
+    padding: 20px 0;
+    color: white;
+    height: 100vh;
+    animation: slideIn 0.5s ease-out; /* Sidebar slide-in animation */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.sidebar li:hover {
+    background-color: #ff6f91;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Fade-in animation for main content */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 10px rgba(255, 105, 135, 0.5); 
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Card Styles */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: bounce 2s infinite;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.card:hover {
+    transform: scale(1.1); /* Enlarged scale on hover */
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.blue {
+    background-color: #00bcd4;
+}
+
+.teal {
+    background-color: #009688;
+}
+
+.orange {
+    background-color: #ff9800;
+}
+
+.purple {
+    background-color: #673ab7;
+}
+
+.pink {
+    background-color: #e91e63;
+}
+
+.magenta {
+    background-color: #d81b60;
+}
+
+.violet {
+    background-color: #9c27b0;
+}
+
+.cyan {
+    background-color: #03a9f4;
+}
+
+/* Table Container Styles */
+.tables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.table {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; 
+}
+
+.table:hover {
+    transform: scale(1.05); /* Enlarged scale on hover */
+}
+
+.table h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.table th {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.table tr:hover td {
+    background-color: #ffebee; 
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: lightgray;
+}
+
+/* Keyframe Animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

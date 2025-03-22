@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacist Information</title>
+    <link rel="stylesheet" href="/static/css/users.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+        
+    <div class="sidebar">
+        <ul>
+            <li><a href="/dashboard" class="link">Dashboard</a></li>
+            <li><a href="/medicien" class="link">Medicine</a></li>
+            <li><a href="/users" class="link">Users</a></li>
+            <li><a href="/customer" class="link">Customer</a></li>
+            <li><a href="/orders" class="link">Orders</a></li>
+            <li><a href="/sales" class="link">Sales</a></li>
+            <li><a href="/reports" class="link">Reports</a></li>
+            <li><a href="/" class="link">LogOut</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Pharmacist Information</h1>
+        <div class="top-right-box">
+            <p>Top Pharmacist This Year<span>🥳🎉</span></p>
+            {% if topUser %}
+                <p>
+                    {{ topUser.Name }} 
+                    with Total Sales: {{ topUser.TotalSales }}
+                </p>
+            {% else %}
+                <p>No sales data available for this Year.</p>
+            {% endif %}
+        </div>
+
+
+        <a href="/addusers" class="addBox">Add New Pharmastic  </a>
+
+        <div class="search-container">
+            <form action="/users" method="GET">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search by Pharmacist ID Or Name"
+                    class="search-box"
+                    value="{{ request.args.get('search', '') }}"
+                />
+                <button type="submit" class="search-icon">🔍</button>
+            </form>
+        </div>
+        <!-- Table displaying records -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile Number</th>
+                        <th>Role</th>
+                        <th>Wage</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTableBody">
+                    {% for row in rows %}
+                    <tr class="animated-row">
+                        <td class="dynamic-data">{{ row.Name }}</td>
+                        <td class="dynamic-data">{{ row.ContactInfo }}</td>
+                        <td class="dynamic-data">{{ row.Role }}</td>
+                        <td class="dynamic-data">{{ row.Wage }}</td>
+                        
+                        <td>
+                            <a class="edit-btn" href="{{ url_for('edit_users', name= row.Name) }}">Edit</a>
+                            <a class="delete-btn" href="{{ url_for('delete_users', name= row.Name) }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>        
+    </div>
+</body>
+</html>
